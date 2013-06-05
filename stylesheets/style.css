@@ -1,0 +1,114 @@
+/*
+*	RESET CSS - Ateneu
+*/
+/* line 10, ../sass/style.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3,
+h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
+address, big, cite, code, del, dfn, em, font, img, ins,
+kbd, q, s, samp, small, strike, strong, sub, sup, tt,
+var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  color: inherit;
+}
+
+/* line 22, ../sass/style.scss */
+:focus {
+  outline: 0;
+}
+
+/* line 23, ../sass/style.scss */
+a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+/* line 24, ../sass/style.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 25, ../sass/style.scss */
+th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 26, ../sass/style.scss */
+img, iframe {
+  border: none;
+  text-decoration: none;
+}
+
+/* line 27, ../sass/style.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 28, ../sass/style.scss */
+input, textarea, select, button {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+/* line 29, ../sass/style.scss */
+select {
+  margin: inherit;
+}
+
+/* line 30, ../sass/style.scss */
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #000;
+  background-color: #000;
+  height: 1px;
+}
+
+/* Custom CSS */
+/* line 34, ../sass/style.scss */
+body {
+  background-image: url("../img/bg.png");
+  width: auto;
+  margin: 0 10px;
+  font-family: "Droid Sans", sans-serif;
+}
+
+/* line 42, ../sass/style.scss */
+header {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* line 46, ../sass/style.scss */
+section {
+  display: inline-block;
+}
+
+/* line 50, ../sass/style.scss */
+h1 {
+  margin: 10px 0;
+  font-size: 50px;
+  font-family: "Oleo Script Swash Caps", serif;
+  text-align: center;
+  color: black;
+  color: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3), 0 -1px 0 rgba(162, 162, 162, 0.7);
+}
+
+/* line 60, ../sass/style.scss */
+h2 {
+  font-size: 20px;
+  font-family: "Droid Sans", sans-serif;
+  color: #335D6A;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
