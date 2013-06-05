@@ -1,24 +1,40 @@
 $(function(){
-var Player = Backbone.Model.extends({
-	defaults : function() {
-		return {
-			name: 'DefaultPlayer'
-		};
-	}
-});
+	var Player = Backbone.Model.extend({
+		defaults : function() {
+			return {
+				name: 'DefaultPlayer'
+			};
+		}
+	});
 
-var player = new Player({
-	name: 'Default player'
-});
+	var PlayerList = Backbone.Collection.extend({
+		model: Player,
+		localStorage: new Backbone.LocalStorage('players-backbone')
+	});
 
-var PlayerView = Backbone.View.extends({
-	render : function(){
-		var html = '<li>'+this.model.get('name')+'<img src="./img/minus-alt.png" alt="Eliminar jugador">';
-		this.$el.html(html);
-	}
-});
+	var Players = new PlayerList;
 
-var playerView = new PlayerView({
-	model: player
-});
+	var player = new Player({
+		name: 'Default player'
+	});
+
+	var PlayerView = Backbone.View.extend({
+		template: _.template('<li><%= name %><img class="deletePlayer" src="./img/minus-alt.png" alt="Eliminar jugador"></li>'),
+		events : {
+			"click .deletePlayer" : "clear"
+		},
+		render : function(){
+			var attributes = this.model.toJSON();
+			this.$el.html(this.template(attributes));
+		},
+		clear : function() {
+			this.model.destroy();
+		}
+	});
+
+	var playerView = new PlayerView({
+		model: player
+	});
+
+	
 });
