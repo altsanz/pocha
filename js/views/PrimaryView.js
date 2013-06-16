@@ -1,9 +1,10 @@
 app.views.PrimaryView = Backbone.View.extend({
-	tagName: 'article',
+	template: _.template($("#primaryView").html()),
 	initialize: function() {
 		console.log('PrimaryView initialized');
 	},
 	render: function() {
-		this.$el.html('PrimaryView content rendered');
+		this.$el.html(this.template);
+		return this;
 	}
 });

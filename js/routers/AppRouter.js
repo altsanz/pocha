@@ -5,20 +5,23 @@ app.routers.AppRouter = Backbone.Router.extend({
 		"secondary": "secondary"
 	},
 	initialize: function() {
-		this.el = $('#mainApp');
 	},
 	primary: function() {
 		this.primaryView = new app.views.PrimaryView();
-		this.primaryView.render();
-		console.log(this.primaryView.el);
-		this.el.html(this.primaryView.el);
+		this.primaryView.$el.attr('data-role', 'page');
+		$("body").append(this.primaryView.render().$el);
+		$.mobile.changePage(this.primaryView.$el, {changeHash:false});
+
 	},
 	secondary: function() {
 		this.secondaryView = new app.views.SecondaryView({
 			model: new app.models.PlayerCollection()
 		});
+		this.secondaryView.$el.attr('data-role', 'page');
 		this.secondaryView.render();
 		console.log(this.secondaryView.el);
-		this.el.html(this.secondaryView.el);
+		$("body").append(this.secondaryView.$el);
+		$.mobile.changePage(this.secondaryView.$el, {changeHash:false});
+
 	}
 });
