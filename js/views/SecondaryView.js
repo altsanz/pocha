@@ -17,7 +17,7 @@ app.views.SecondaryView = Backbone.View.extend({
 		var view = new app.views.InitPlayerListItemView({
 			model: player
 		});
-		$("#initPlayersList").append(view.$el);
+		$("#initPlayersList").append(view.render().$el);
 		
 		$("#initPlayersList").listview('refresh');
 
