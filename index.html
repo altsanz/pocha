@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <script type="text/template" id="primaryView">
+  <script type="text/template" id="primaryViewTemplate">
     <div data-role="header">
         <h1>PochApp</h1>
     </div>
@@ -21,13 +21,13 @@
     </div>
    </script>
 
-   <script type="text/template" id="secondaryView">
+   <script type="text/template" id="secondaryViewTemplate">
     <div data-role="header">
         <h1>PochApp</h1>
     </div>
 
     <div data-role="content">
-    	<ul id="initPlayersList" data-role="listview" data-inset="true">
+    	<ul id="initPlayersList" data-role="listview" data-icon="delete" data-inset="true">
     	</ul>
     	<label for="new-player" class="ui-hidden-accessible">Inserta jugador:</label>
 			<input id="new-player" type="text">
