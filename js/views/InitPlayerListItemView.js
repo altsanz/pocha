@@ -6,4 +6,4 @@ app.views.InitPlayerListItemView = Backbone.View.extend({
 		this.$el.html(this.model.get('name'));
 		return this;
 	}
-})
+});

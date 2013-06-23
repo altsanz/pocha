@@ -1,5 +1,5 @@
 app.views.PrimaryView = Backbone.View.extend({
-	template: _.template($("#primaryView").html()),
+	template: _.template($("#primaryViewTemplate").html()),
 	initialize: function() {
 		console.log('PrimaryView initialized');
 	},
