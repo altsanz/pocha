@@ -1,12 +1,10 @@
+
+
 app.views.InitPlayersListView = Backbone.View.extend({
 	tagName: 'ul',
 	initialize: function() {
 		console.log('SecondaryView initialized');
 		this.listenTo(this.model, 'add', this.addOne);
-	},
-	render: function() {
-		this.$el.append('<li>SecondaryView content rendered.</li>');
-		return this;
 	},
 	addOne: function(player) {
 		console.log('Added one model into playersCollection');
@@ -17,13 +15,17 @@ app.views.InitPlayersListView = Backbone.View.extend({
 		var view = new app.views.InitPlayerListItemView({
 			model: player
 		});
+
 		this.$el.append(view.render().$el);
+		console.log(this.$el.html());
+
 	},
 	addAll: function() {
 		this.model.each(this.addOne, this);
 	}
 });
 
+/* Se encarga de almacenar toda la vista del segundo menú, donde se añaden jugadores */
 app.views.SecondaryView = Backbone.View.extend({
 	template: _.template($("#secondaryView").html()),
 	events: {
@@ -48,10 +50,10 @@ app.views.SecondaryView = Backbone.View.extend({
 		this.input.val('');
 
 		// We add the content of initPlayersListView element, because when model added, listener triggers and autorenders new element into list.
-		$("#initPlayersList").html(this.initPlayersListView.$el.html());
+		$("#initPlayersList").html(this.initPlayersListView.$el.html()).listview('refresh');
 		
 		// Needed to update list appearance, apply styles, etc.
-		$('#initPlayersList').listview('refresh');	
+
 
 			
 
