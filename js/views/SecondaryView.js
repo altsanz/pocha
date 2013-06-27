@@ -3,9 +3,11 @@ app.views.SecondaryView = Backbone.View.extend({
 	template: _.template($("#secondaryViewTemplate").html()),
 	events: {
 		"keypress #new-player" : "createOnEnter",
+		"click li" : "deletePlayer"
 	},
 	initialize: function() {
-		this.listenTo(this.model, 'add', this.addOne)
+		localStorage.clear();
+		this.listenTo(this.model, 'add', this.addOne);
 	},
 	render: function() {
 		this.$el.html(this.template);
@@ -31,6 +33,10 @@ app.views.SecondaryView = Backbone.View.extend({
 		this.input.val('');
 
 		// Needed to update list appearance, apply styles, etc.
+	},
+	deletePlayer: function(listPlayerItem) {
+		listPlayerItem.preventDefault();	// To prevent from navigating to href content.
+		console.log('Destroy: ' + listPlayerItem);
 	}
 });
 
