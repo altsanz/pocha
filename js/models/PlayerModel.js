@@ -1,7 +1,8 @@
 app.models.Player = Backbone.Model.extend({
 	defaults: function() {
 		return {
-			name: 'DefaultPlayer'
+			name: 'DefaultPlayer',
+			bet: 0
 		}
 	}
 });

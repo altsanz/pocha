@@ -29,13 +29,25 @@
     </div>
 
     <div data-role="content">
-    	<ul id="initPlayersList" data-role="listview" data-icon="delete" data-inset="true">
-    	</ul>
-    	<label for="new-player" class="ui-hidden-accessible">Inserta jugador:</label>
-			<input id="new-player" type="text">
+      <ul id="initPlayersList" data-role="listview" data-icon="delete" data-inset="true"></ul>
+      <label for="new-player" class="ui-hidden-accessible">Inserta jugador:</label>
+      <input id="new-player" placeholder="Inserta nombre de jugador..." type="text">
+      <a data-role="button" href="#firstRoundBet">Empezar partida!</a>
     </div>
    </script>
 
+   <script type="text/template" id="betRoundViewTemplate">
+    <div data-role="header">
+        <h1>Ronda 1</h1>
+    </div>
+
+    <div data-role="content">
+    	<ul id="playersList" data-role="listview" data-inset="true">
+        <li>Hola que tal<input type="text"></li>
+      </ul>
+    </div>
+   </script>
+  
   <script type="text/template" id="listItemViewTemplate">
     <a href="#"><%= name %></a>
   </script>
@@ -54,8 +66,9 @@
 	<script src="js/models/PlayerModel.js"></script>
 
 	<script src="js/views/PrimaryView.js"></script>
-	<script src="js/views/SecondaryView.js"></script>
+  <script src="js/views/SecondaryView.js"></script>
 	<script src="js/views/InitPlayerListItemView.js"></script>
+  <script src="js/views/BetRoundView.js"></script>
 
 
 
