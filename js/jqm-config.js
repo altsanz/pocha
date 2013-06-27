@@ -5,3 +5,7 @@ $(document).bind("mobileinit", function () {
     $.mobile.pushStateEnabled = false;
 
 });
+
+$('body').on('pagehide','div[data-role="page"]', function(event, ui) {
+    $(event.currentTarget).remove();
+});
